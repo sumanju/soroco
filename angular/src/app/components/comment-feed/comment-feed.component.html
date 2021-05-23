@@ -1,0 +1,30 @@
+<div  class="structure">
+
+  <div>
+    <input style="padding: 4px 4px; " 
+           type="text" 
+           (keyup)="search($event)" 
+           placeholder="search"/>
+    <input style="padding: 4px 4px; margin-left: 4vw;" 
+           type="text" 
+           (keyup)="find($event)"   
+           placeholder="find comment" />
+    <input style="padding: 4px 4px; margin-left: 4vw;" 
+           type="text" 
+           (keyup)="newComment($event)"   
+           placeholder="comment" />
+    <input style="padding: 4px 4px; margin-left: 4vw;" 
+           type="button" 
+           (click)="addComment()"  
+           value="add Comments" />
+  </div>
+
+  <ng-container *ngFor="let data of comments">
+    <div style="border: 1px solid black; 
+                margin-top: 3vh;
+                padding: 1vh 2vw;"> 
+                
+      <div> {{ data['text'] }} </div> 
+    </div>
+  </ng-container>
+</div>
